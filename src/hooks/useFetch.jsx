@@ -1,3 +1,4 @@
+// src/hooks/useFetch.js
 import { useState, useEffect } from "react";
 import { api } from "../api";
 
@@ -8,23 +9,19 @@ export const useFetch = (endpoint) => {
 
   useEffect(() => {
     setLoading(true);
-    api.get(endpoint).then((res) => {
-      setData(res.data);
-      console
-        .log(res)
-        .catch((err) => {
-          setError(err);
-          console.log(err);
-        })
-        .finally(() => setLoading(false));
-    });
-  }, []);
-  if (error) {
-    return (
-      <div className="text-center my-4 text-red-600 text-[18px]">
-        <p>Something is wrong:)</p>
-      </div>
-    );
-  }
+    api
+      .get(endpoint.startsWith("/") ? endpoint : `/${endpoint}`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        setError(err);
+        console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [endpoint]);
+
   return { data, error, loading };
 };

@@ -2,6 +2,7 @@ import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "../utils";
+import ProductDetails from "./productDetails/ProductDetails";
 const Layout = lazy(() => import("./layout/Layout"))
 const Home = lazy(() => import("./home/Home"))
 const Users = lazy(() => import("./users/Users"))
@@ -17,8 +18,9 @@ const MainRoutes = () => {
             <Route path="/" element={<Suspense><Home/></Suspense>}/>
             <Route path="/users" element={<Suspense><Users/></Suspense>}/>
             <Route path="/carts" element={<Suspense><Carts/></Suspense>}/>
-            <Route path="*" element={<Suspense><NotFound/></Suspense>}/>
+            <Route path="/productDetails/:id" element={<Suspense><ProductDetails/></Suspense>}/>
         </Route>
+            <Route path="*" element={<Suspense><NotFound/></Suspense>}/>
 
         <Route path="/login" element={<Suspense><Login /></Suspense>} />
       </Routes>
