@@ -1,0 +1,10 @@
+.headerLink.active{
+    border-bottom: 2px solid white;
+    color: white;
+    font-weight: bold;
+}
+.headerLink:hover{
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
