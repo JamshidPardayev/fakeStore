@@ -27,11 +27,6 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="relative before:absolute before:left-0 before:bottom-0 before:w-[0%] before:h-[2px] before:bg-[#aaaaaa] before:duration-300 hover:before:w-[100%]">
-            <NavLink to={"/carts"} className={"headerLink"}>
-              Carts
-            </NavLink>
-          </li>
-          <li className="relative before:absolute before:left-0 before:bottom-0 before:w-[0%] before:h-[2px] before:bg-[#aaaaaa] before:duration-300 hover:before:w-[100%]">
             <NavLink to={"/login"} className={"headerLink"}>
               Login
             </NavLink>

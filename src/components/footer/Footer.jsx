@@ -34,39 +34,32 @@ const Footer = () => {
             recipes.
           </p>
         </div>
-        <div className="max-sm:hidden">
+        <div>
           <p className="text-[20px] font-semibold text-white">Users</p>
           <p>Jon Doe</p>
           <p>Jon Uik</p>
           <p>Chan Uk</p>
           <p>Elvin Jr</p>
         </div>
-        <div className="max-sm:hidden">
-          <p className="text-[20px] font-semibold text-white">Carts</p>
-          <p>Cars</p>
-          <p>Comedy</p>
-          <p>Sport</p>
-          <p>Gadjets</p>
-        </div>
-        <div id="contact">
+        <div id="contact" className="w-[40%] max-sm:w-[85%]">
           <p className="text-[20px] font-semibold text-white max-sm:text-center max-sm:mt-3">Contact us</p>
-          <form action="" className="w-[250px] h-[40px] flex items-center my-2">
+          <form action="" className="w-full h-[40px] flex items-center my-2">
             <input
               value={value}
               onChange={(e) => setValue(e.target.value)}
               type="email"
               required
               placeholder="Enter Your Email"
-              className="h-[40px] border border-pink-600 rounded-l-[5px] px-2 outline-none"
+              className="h-[40px] w-full border border-pink-600 rounded-l-[5px] px-2 outline-none"
             />
             <button
               onClick={handleClick}
-              className="bg-pink-600 rounded-r-[5px] w-[80px] h-[40px] cursor-pointer hover:bg-pink-700 text-white duration-300"
+              className="bg-pink-600 rounded-r-[5px] w-[120px] h-[40px] cursor-pointer hover:bg-pink-700 text-white duration-300"
             >
               Send
             </button>
           </form>
-          <div className="flex gap-4 text-[25px] max-md:justify-center mt-5">
+          <div className="flex gap-8 text-[25px] max-md:justify-center mt-5">
             <FaTelegramPlane className="text-blue-500 hover:text-blue-800 cursor-pointer duration-300" />
             <FaInstagram className="text-pink-500 hover:text-pink-800 cursor-pointer duration-300" />
             <FaTwitter className="text-blue-300 hover:text-blue-800 cursor-pointer duration-300" />
