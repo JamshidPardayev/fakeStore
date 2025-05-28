@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,9 +34,13 @@ const Login = () => {
     toast.success("Forma tozalandi! ✅");
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div id="login" className="min-h-[100vh] max-w-[1200px] mx-auto px-4 py-5">
-      <div className="flex gap-x-5 justify-center">
+      <div data-aos="zoom-in" className="flex gap-x-5 justify-center">
         <button
           onClick={() => navigate("/")}
           className="h-[35px] px-6 border border-violet-800 rounded-[10px] duration-300 shadow-[3px_3px_5px_#360564] cursor-pointer hover:bg-violet-800"
@@ -49,7 +54,7 @@ const Login = () => {
           Go Back
         </button>
       </div>
-      <form className="flex flex-col max-w-[600px] mx-auto mt-5 py-2 px-4 rounded-2xl shadow-[0px_2px_8px_3px_#360564]">
+      <form data-aos="zoom-in" className="flex flex-col max-w-[600px] mx-auto mt-5 py-2 px-4 rounded-2xl shadow-[0px_2px_8px_3px_#360564]">
         <h1 className="relative text-[26px] w-[80px] mx-auto font-semibold text-center before:absolute before:left-0 before:bottom-0 before:w-[80px] before:h-[2px] before:bg-white before:scale-0 hover:before:scale-100 cursor-pointer before:duration-300">
           Login
         </h1>
@@ -134,4 +139,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default React.memo(Login);

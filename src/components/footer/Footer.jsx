@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import {
   FaFacebookF,
@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo1.png";
+import Aos from "aos";
 
 const Footer = () => {
   const [value, setValue] = useState("");
@@ -21,13 +22,19 @@ const Footer = () => {
     }
     setValue("");
   };
-
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <div className="bg-black py-5">
+    <div className="bg-black py-5" data-aos="fade-down">
       <div className="max-w-[1200px] mx-auto px-4 flex justify-between flex-wrap gap-6 font-normal text-gray-400 max-sm:justify-evenly">
         <div>
           <Link to="/">
-            <img src={logo} alt="footerLogo" className="h-[100px] max-sm:mx-auto" />
+            <img
+              src={logo}
+              alt="footerLogo"
+              className="h-[100px] max-sm:mx-auto"
+            />
           </Link>
           <p className="max-w-[200px] max-sm:text-center">
             Our site can you give some information about products, users, posts,
@@ -42,7 +49,9 @@ const Footer = () => {
           <p>Elvin Jr</p>
         </div>
         <div id="contact" className="w-[40%] max-sm:w-[85%]">
-          <p className="text-[20px] font-semibold text-white max-sm:text-center max-sm:mt-3">Contact us</p>
+          <p className="text-[20px] font-semibold text-white max-sm:text-center max-sm:mt-3">
+            Contact us
+          </p>
           <form action="" className="w-full h-[40px] flex items-center my-2">
             <input
               value={value}
@@ -71,4 +80,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

@@ -1,16 +1,24 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react"; 
+import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import AOS from "aos";
 
 const Hero = () => {
+  () => {
+    AOS.init({ duration: 1000 });
+  },
+    [];
   return (
-    <div className="flex justify-center items-center h-[450px] max-md:h-[400px] max-sm:h-[350px] my-1">
+    <div
+      data-aos="fade-down"
+      className="flex justify-center items-center h-[450px] max-md:h-[400px] max-sm:h-[350px] my-1"
+    >
       <Swiper
-        effect="coverflow"  
+        effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
         slidesPerView="auto"
@@ -55,4 +63,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default React.memo(Hero);

@@ -1,5 +1,6 @@
 import React from "react";
 import MainRoutes from "./pages";
+import 'aos/dist/aos.css';
 
 const App = () => {
   return (

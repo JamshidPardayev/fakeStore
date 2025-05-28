@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import Hero from '../../components/hero/Hero'
-import Products from '../products/Products'
-
+const Products = lazy(() => import("../products/Products"))
 const Home = () => {
   return (
     <div>
@@ -11,4 +10,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default React.memo(Home);
