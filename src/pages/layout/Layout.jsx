@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="min-h-[100vh] flex flex-col justify-between">
       <Header />
       <Outlet />
       <Footer />

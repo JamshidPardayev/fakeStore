@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
+import { useFetch } from "@/hooks/useFetch";
 
 const Users = () => {
+
+
   const { data, error, loading } = useFetch("/users");
   const navigate = useNavigate();
   useEffect(() => {
@@ -26,17 +28,18 @@ const Users = () => {
         </p>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+      <div className=" w-full px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8  mt-8">
         {data?.map((user) => (
           <div
             data-aos="flip-right"
             key={user?.id}
-            className="border border-[#360564] p-3 rounded text-center shadow-[0px_2px_8px_3px_#360564]"
+            className="min-w-[240px] max-lg:min-w-[220px] w-full border border-[#360564] p-3 rounded text-center shadow-[0px_2px_8px_3px_#360564]"
           >
             <h2 className="text-2xl capitalize font-semibold">
               {user?.name?.firstname} {user?.name?.lastname}
             </h2>
             <p className="my-4 font-medium">{user?.email}</p>
+          
             <button
               onClick={() => navigate(`/userDetails/${user?.id}`)}
               className="h-[40px] w-full border border-violet-800 rounded-[10px] shadow-[0px_2px_8px_3px_#360564] hover:bg-violet-800 duration-300 cursor-pointer"

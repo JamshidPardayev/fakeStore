@@ -9,6 +9,7 @@ const NotFound = lazy(() => import("./notFound/NotFound"))
 const Login = lazy(() => import("./login/Login"))
 const ProductDetails = lazy(() => import("./productDetails/ProductDetails"))
 const UserDetails = lazy(() => import("./userDetails/UserDetails"))
+const Wishlist = lazy(() => import("./wishlist/Wishlist"))
 const MainRoutes = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const MainRoutes = () => {
             <Route path="/users" element={<Suspense><Users/></Suspense>}/>
             <Route path="/productDetails/:id" element={<Suspense><ProductDetails/></Suspense>}/>
             <Route path="/userDetails/:id" element={<Suspense><UserDetails/></Suspense>}/>
+            <Route path="/wishlist" element={<Suspense><Wishlist/></Suspense>}/>
 
         </Route>
             <Route path="*" element={<Suspense><NotFound/></Suspense>}/>

@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./style.css";
 import logo from "../../assets/logo1.png";
 import AOS from "aos";
+import { FaHeart } from "react-icons/fa";
 
 const Header = () => {
   useEffect(() => {
@@ -32,11 +33,18 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <button className="w-[120px] h-[35px] text-white rounded-[10px] border shadow-[0px_2px_8px_3px_#333333] hover:bg-gray-900 duration-300 cursor-pointer max-sm:hidden">
-          <a href="#contact">Contact</a>
-        </button>
+        <div className="flex items-center gap-8">
+          <div>
+            <Link to={"./wishlist"}>
+              <FaHeart className="text-[22px] cursor-pointer" />
+            </Link>
+          </div>
+          <button className="w-[120px] h-[35px] text-white rounded-[10px] border shadow-[0px_2px_8px_3px_#333333] hover:bg-gray-900 duration-300 cursor-pointer max-sm:hidden">
+            <a href="#contact">Contact</a>
+          </button>
 
-        <IoMdMenu className="hidden max-sm:block text-[30px] hover:text-[#aaaaaa] duration-300 cursor-pointer" />
+          <IoMdMenu className="hidden max-sm:block text-[30px] hover:text-[#aaaaaa] duration-300 cursor-pointer" />
+        </div>
       </div>
     </div>
   );

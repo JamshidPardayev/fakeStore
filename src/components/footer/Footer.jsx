@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import {
   FaFacebookF,
@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo1.png";
-import Aos from "aos";
 
 const Footer = () => {
   const [value, setValue] = useState("");
@@ -22,11 +21,8 @@ const Footer = () => {
     }
     setValue("");
   };
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
   return (
-    <div className="bg-black py-5" data-aos="fade-down">
+    <div className="bg-black py-5">
       <div className="max-w-[1200px] mx-auto px-4 flex justify-between flex-wrap gap-6 font-normal text-gray-400 max-sm:justify-evenly">
         <div>
           <Link to="/">
